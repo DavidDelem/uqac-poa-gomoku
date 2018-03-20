@@ -10,3 +10,7 @@ Tutoriels a suivre pour faire marcher AspectJ avec IntelliJ (AspectJ est compati
 
 https://www.jetbrains.com/help/idea/creating-aspects.html
 https://www.jetbrains.com/help/idea/aspectj.html
+Et changer le compiler d'inteliJ pour ajc (au lieu de javac) pour que les aspects soient pris en compte (file->settings->java compiler), avec comme "Path to ajc compiler": aspectj1.8\lib\aspectjtools.jar
+
+Tuto avec Hello world AspectJ:
+http://tzachsolomon.blogspot.ca/2015/08/how-to-create-hello-world-with-intellij.html
