@@ -5,3 +5,8 @@
 <p><b>David Delemotte, Rénald Morice</b></p>
 
 ---
+
+Tutoriels a suivre pour faire marcher AspectJ avec IntelliJ (AspectJ est compatible avec IntelliJ Ultimate uniquement):
+
+https://www.jetbrains.com/help/idea/creating-aspects.html
+https://www.jetbrains.com/help/idea/aspectj.html
