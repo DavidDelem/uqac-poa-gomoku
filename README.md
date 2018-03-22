@@ -13,16 +13,24 @@ Afin de réaliser ce travail, nous avons utilisé AspectJ. Il faut compiler le p
 <h4>Ce qui a été réalisé</h4>
 
 - [x] Le code fourni n'a pas été modifié<br><br>
-- [x] **`aspects/Journalisation.aj`** Enregistre dans un fichier les coups joué en interceptant les paramètres transmits à la méthode <i>placeStone</i>. Le fichier créé se nome journalisation.txt.<br><br>
-- [x] **`aspects/AdversaireJ.aj`** Implémente le multijoueur. Pour cela, deux joueur + une variable enregistrant le joueur courant sont crées dans l'aspect. On peut alors modifier à chaque tour le joueur retourné par <i>getCurrentPlayer</i><br><br>
-- [x] **`aspects/FinJeu.aj`** Détecte la fin du jeu et affiche le gagnant grâce au pointcut <i>captureGameOver</i>. Empéche de jouer une fois la partie terminée grâce au pointcut <i>captureMakeMove</i> (pour cela on bloque l'éxecution de la méthode <i>MakeMove</i>). Colore la suite gagnante.<br><br>
+- [x] **`aspects/Journalisation.aj`** Enregistre dans un fichier (journalisation.txt) les coups joué en interceptant les paramètres transmits à la méthode <i>placeStone</i>.<br><br>
+- [x] **`aspects/AdversaireJ.aj`** Implémente le multijoueur. Pour cela, deux joueur + une variable joueurCourant sont crées dans l'aspect. On change à chaque tour le joueur retourné par <i>getCurrentPlayer</i><br><br>
+- [x] **`aspects/FinJeu.aj`** Détecte la fin du jeu et affiche le gagnant grâce au pointcut <i>captureGameOver</i>. Empéche de jouer une fois la partie terminée grâce au pointcut <i>captureMakeMove</i> (pour cela on bloque l'éxecution de la méthode <i>MakeMove</i>).<br><br>
+- [x] **`aspects/ColorisationSuiteGagnante.aj`** Colore la suite gagnante en vert. Pour cela, on a besoin de faire de la réflexivité afin d'accéder à des attributs/méthodes privées:
+
+Le premier récupère la liste des champs gagnants. Comme cette liste est privée et n'a aucun getter/setter, on doit faire de la réflexion sur la classe Grid pour rendre la liste publique.<br><br>
+Le second change la couleur des piéces gagnantes au moment de les dessiner (Borad.drawStone).
+Le dernier appelle la méthode de refresh de l'interface (Borad.drawStones) au moment de l'appel à Board.gameOver car sinon, l'interface n'est pas rafraichie. Borad.drawStones est privée, il faut donc faire de la réflexion pour l'appeler.
 
 ---
 
-<h4>Gifs du résultat</h4>
+<h4>Gif du résultat</h4>
 
-gif multijoueur
-gif partie finie + résultats
+<p align="center">
+  <img src="_imgreadme/resultat.gif"/>
+</p>
+
+
 
 ---
 
