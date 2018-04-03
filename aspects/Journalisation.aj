@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /* --------------------------------------------------------------------------------------   */
+/* David Delemotte - Rénald Morice                                                          */
 /* Aspect permettant de journaliser les coups joués dans un fichier                         */
 /* --------------------------------------------------------------------------------------   */
 
@@ -28,6 +29,10 @@ public aspect Journalisation {
             call(void gameOver(Player)) &&
                     args(winner);
 
+    /* --------------------------------------------------------------------------------------   */
+    /* Fonction liée au pointcut captureParametres permettant d'enregistrer les coups           */
+    /* --------------------------------------------------------------------------------------   */
+
     before(int x, int y, Player player) : captureParametres(x, y, player) {
         try {
             // enregistrement du coup dans le fichier journalisation.txt qui se trouvera a la racine du projet
@@ -39,6 +44,10 @@ public aspect Journalisation {
             e.printStackTrace();
         }
     }
+
+    /* --------------------------------------------------------------------------------------   */
+    /* Fonction liée au pointcut captureFinCoups permettant d'enregistrer le gagnant            */
+    /* --------------------------------------------------------------------------------------   */
 
     after(Player winner) : captureFinCoups(winner) {
         try {

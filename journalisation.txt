@@ -21,3 +21,14 @@ nom=Mr. Red,x=7,y=9
 nom=Mr. Blue,x=6,y=10
 nom=Mr. Red,x=7,y=10
 winner=Mr. Red
+nom=Mr. Blue,x=8,y=8
+nom=Mr. Red,x=9,y=8
+nom=Mr. Blue,x=7,y=7
+nom=Mr. Red,x=9,y=7
+nom=Mr. Blue,x=10,y=9
+nom=Mr. Red,x=9,y=6
+nom=Mr. Blue,x=10,y=6
+nom=Mr. Red,x=9,y=5
+nom=Mr. Blue,x=10,y=5
+nom=Mr. Red,x=9,y=4
+winner=Mr. Red
